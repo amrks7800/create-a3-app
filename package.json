@@ -1,6 +1,6 @@
 {
   "name": "create-am3-app",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "bin": {
-    "create-boilerplate": "./generate-app.js"
+    "create-am3-app": "./generate-app.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",
