@@ -13,7 +13,14 @@ if (process.argv.length < 3) {
 
 const projectName = process.argv[2]
 const currentPath = process.cwd()
-const projectPath = path.join(currentPath, projectName)
+let projectPath
+
+if (projectName === "." || projectName === "./") {
+  projectPath = path.join(currentPath)
+} else {
+  projectPath = path.join(currentPath, projectName)
+}
+
 const git_repo =
   "https://github.com/amrks7800/create-a3-app.git"
 
