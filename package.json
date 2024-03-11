@@ -1,12 +1,15 @@
 {
   "name": "create-am3-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
+  },
+  "bin": {
+    "create-boilerplate": "./generate-app.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",
