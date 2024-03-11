@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&family=Protest+Revolution&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ff-base: "Karla", sans-serif;
+  --ff-title: "Protest Revolution", sans-serif;
+}
+
+body {
+  background: #000;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.447);
+  z-index: -1;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  translate: -50% -50%;
+  filter: blur(5rem);
+  width: 80%;
+  height: 70vh;
+  border-radius: 30%;
+  z-index: -2;
+  animation: slight-move 17s infinite;
+  background: #5c258d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4389a2,
+    #5c258d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4389a2,
+    #5c258d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#root .mouse-follower {
+  display: none;
+  content: "";
+  position: absolute;
+  left: var(--x, 0);
+  top: var(--y, 0);
+  translate: -50% -50%;
+  filter: blur(3rem);
+  width: 15%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  z-index: -2;
+  animation: slight-move 17s infinite;
+  background: hsla(0, 0%, 100%, 0.447);
+
+  background: -webkit-linear-gradient(
+    to right,
+    #4a569d,
+    #dc2424
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a569d,
+    #dc2424
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#root:hover .mouse-follower {
+  display: block;
+}
+
+@keyframes slight-move {
+  20% {
+    rotate: 10deg;
+    scale: 1.02;
+  }
+  40% {
+    rotate: -10deg;
+    scale: 0.98;
+  }
+  60% {
+    rotate: 10deg;
+    scale: 1.02;
+  }
+  80% {
+    rotate: -10deg;
+    scale: 0.98;
+  }
+}
+
+/* .rows-grid {
+  grid-template-rows: auto 1fr auto;
+} */
+
+/* personal utilities */
+
+.flow > * + * {
+  margin-top: var(--spacer, 1rem);
+}
+
+.glassy {
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: scale 300ms;
+}
+
+.glassy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(207, 201, 255, 0.222);
+
+  backdrop-filter: blur(17.1px);
+  -webkit-backdrop-filter: blur(17.1px);
+
+  z-index: -1;
+}
+
+.glassy::after {
+  content: "";
+  position: absolute;
+  left: -400px;
+  width: 30px;
+  height: 300%;
+  rotate: -30deg;
+  background: rgba(220, 220, 220, 0.472);
+  filter: blur(1rem);
+  z-index: -2;
+  bottom: -120px;
+  transition: translate 750ms;
+}
+
+.glassy:hover {
+  scale: 1.01;
+}
+
+.glassy:hover::after {
+  translate: 700px;
+}
