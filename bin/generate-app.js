@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { execSync } = require("child_process")
-const path = require("path")
-const fs = require("fs")
+import { execSync } from "child_process"
+import { join } from "path"
+import { mkdirSync, rmSync } from "fs"
 
 if (process.argv.length < 3) {
   console.log("You have to provide a name to your app.")
@@ -16,33 +16,33 @@ const currentPath = process.cwd()
 let projectPath
 
 if (projectName === "." || projectName === "./") {
-  projectPath = path.join(currentPath)
+  projectPath = join(currentPath)
 } else {
-  projectPath = path.join(currentPath, projectName)
+  projectPath = join(currentPath, projectName)
 }
 
 const git_repo =
   "https://github.com/amrks7800/create-a3-app.git"
 
-try {
-  fs.mkdirSync(projectPath)
-} catch (err) {
-  if (err.code === "EEXIST") {
-    console.log(
-      `The file ${projectName} already exist in the current directory, please give it another name.`
-    )
-  } else {
-    console.log(err)
+if (!projectName === "." || !projectName === "./") {
+  try {
+    mkdirSync(projectPath)
+  } catch (err) {
+    if (err.code === "EEXIST") {
+      console.log(
+        `The file ${projectName} already exist in the current directory, please give it another name.`
+      )
+    } else {
+      console.log(err)
+    }
+    process.exit(1)
   }
-  process.exit(1)
 }
 
 async function main() {
   try {
     console.log("Downloading files...")
-    execSync(
-      `git clone --depth 1 ${git_repo} ${projectPath}`
-    )
+    execSync(`git clone ${git_repo} "${projectPath}"`)
 
     process.chdir(projectPath)
 
@@ -51,12 +51,14 @@ async function main() {
 
     console.log("Removing useless files")
     execSync("npx rimraf ./.git")
-    fs.rmdirSync(path.join(projectPath, "bin"), {
+    rmSync(join(projectPath, "bin"), {
       recursive: true,
     })
 
     console.log(
-      "The installation is done, this is ready to use !"
+      "remember that the web is a better place with your creations 🧐😚\n",
+      "happy hacking \n",
+      "Amr khalid"
     )
   } catch (error) {
     console.log(error)

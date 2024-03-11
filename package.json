@@ -1,7 +1,8 @@
 {
   "name": "create-am3-app",
-  "version": "1.0.4",
+  "version": "1.1.2",
   "type": "module",
+  "main": "./src/main.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -9,7 +10,7 @@
     "preview": "vite preview"
   },
   "bin": {
-    "create-am3-app": "./generate-app.js"
+    "create-am3-app": "./bin/generate-app.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",
