@@ -1,6 +1,6 @@
 {
   "name": "create-am3-app",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "bin": {
     "create-am3-app": "./bin/generate-app.js"
@@ -12,21 +12,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.28.0",
+    "@tanstack/react-query": "latest",
     "elegant-store": "latest",
-    "next": "14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "autoprefixer": "^10.4.17",
-    "eslint": "^8.55.0",
-    "eslint-config-next": "14.2.3",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.2.2"
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }
