@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-base: var(--ff-base);
+  --font-title: var(--ff-title);
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
